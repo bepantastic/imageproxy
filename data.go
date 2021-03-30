@@ -83,7 +83,7 @@ func ParseHexColor(s string) (c color.RGBA, err error) {
 }
 
 func ColorToHex(c color.RGBA) (s string) {
-	return fmt.Sprintf("%X%X%X", c.R, c.G, c.B)
+	return fmt.Sprintf("%X%X%X%X%X%X", c.R/16, c.R%16, c.G/16, c.G%16, c.B/16, c.B%16)
 }
 
 // Options specifies transformations to be performed on the requested image.
